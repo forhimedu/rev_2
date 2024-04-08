@@ -1,0 +1,171 @@
+@font-face {
+  font-family: "Sriracha"; /* Replace with the actual font family name */
+  src: url("Sriracha-Regular.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Crimson";
+  src: url("CrimsonRegular.ttf") format("truetype");
+}
+
+* {
+  box-sizing: border-box;
+  font-family: "Sriracha", system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-weight: 400;
+}
+
+body {
+  height: 100vh;
+  width: 100vw;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: #83a4d4;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #b6fbff, #83a4d4);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #b6fbff, #83a4d4); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  font-size: 1em;
+}
+
+
+.container {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.question {
+  display: flex;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  height: 220px;
+  margin-bottom: 5px;
+}
+
+.startBtn {
+  display: block;
+}
+
+
+.answer {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.answer > * {
+  font-family:  "Crimson", Arial, Helvetica, sans-serif;
+}
+
+.buttons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+button {
+  margin: 5px 5px;
+  width: 8em;
+  padding: 10px 2px;
+  border: none;
+  border-radius: 5px;
+  font-size: 1em;
+}
+
+span {
+  display: flex;
+  width: 100%;
+  height: 2rem;
+  align-items: center;
+  justify-content: center;
+  margin: 5px;
+}
+
+input {
+  margin: 5px;
+  text-align: center;
+  height: 3rem;
+  font-size: 1.2em;
+}
+
+.points {
+  background-color: lightcyan;
+  width: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.answerBoard {
+  background-color: lightyellow;
+  height: 3rem;
+  font-size: 1.2em;
+}
+
+sub {
+  position:relative;
+  top: 3px;
+}
+
+.green {
+  background-color: rgb(8, 118, 8);
+  color: lightblue;
+}
+
+.red {
+  background-color: rgb(193, 5, 5);
+  color: white;
+}
+
+h4 {
+  color: rgb(50, 3, 8);
+  padding: 5px;
+}
+
+.nextBtn{
+  background-color: lightgreen;
+}
+
+.nextBtn:active {
+  background-color: rgb(6, 54, 6);
+  color: white;
+}
+
+.switchBtn {
+  background-color: rgb(231, 235, 174);
+}
+
+.switchBtn:active {
+  background-color: rgb(47, 39, 3);
+  color: white;
+}
+
+.revealAnswerBtn {
+  background-color: rgb(196, 192, 212);
+}
+
+.revealAnswerBtn:active {
+  background-color: rgb(38, 9, 153);
+  color: white;
+}
+
+.submitBtn {
+  background-color: lightcyan;
+}
+
+.submitBtn:active {
+  background-color: rgb(2, 55, 55);
+  color: white;
+}
+
+p{
+  color: rgb(43, 43, 221);
+}
