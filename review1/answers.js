@@ -1,3 +1,5 @@
+const container = document.getElementById('container');
+
 const data = [
   ["сутек", "Әлемде ең көп тараған элемент. Күннің және көптеген жұлдыздардың ең негізгі құрамбөлігі"],
   ["гелий", "Әлемде таралуы жағынан екінші орында"],
@@ -111,102 +113,16 @@ const data = [
 
 ]
 
-function shuffleArray(array) {
-  for (let i = array.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1));
-    [array[i], array[j]] = [array[j], array[i]];
-  }
-  return array;
-}
-
-
-const question = document.querySelector('.question');
-const answerId = document.getElementById('answer');
-const points = document.querySelector('.points');
-const rightAnswers = document.querySelector('.rightAnswer');
-const nextBtn = document.querySelector('.nextBtn')
-const submitBtn = document.querySelector('.submitBtn');
-const revealAnswerBtn = document.querySelector('.giveUpBtn');
-const answer = document.getElementById('answer');
-const result = document.querySelector('.result');
-const giveUpBtn = document.querySelector('.giveUpBtn');
-
-
-function emptifyElement(a) {
-  a.innerHTML = "";
-}
-
 function App() {
-  let i = 0;
-  let newArr = shuffleArray(data);
-  let pickedQuestion = undefined;
-  let answered = true;
-  let pointsValue = 0;
-
-  nextBtn.addEventListener('click', (e) => {
-    e.preventDefault();
-    if (answered == true) {
-    result.classList.remove('lightcoral');
-    result.classList.remove('lightgreen');
-    question.classList.remove('lightcoral');
-    question.classList.remove('lightgreen');
-      emptifyElement(question);    
-    if (i == newArr.length){
-      newArr = shuffleArray(data);
-      i=0;
-    } 
-    pickedQuestion = newArr[i];
+  let i = 1;
+  data.forEach(elem => {
+    const a = document.createElement('p');
+    a.classList.add('black');
+    const text = `${i}. ${elem[1]} => [${elem[0]}]`
+    a.innerHTML = text;
+    container.appendChild(a);
     i++;
-    if  (pickedQuestion[1][0] == '.') {
-      const photo = document.createElement('img');
-      photo.setAttribute('src', `${pickedQuestion[1]}`);
-      question.appendChild(photo);
-    }
-    else {
-    const questText = document.createElement('h4');
-    questText.innerHTML = pickedQuestion[1];
-    question.appendChild(questText);
-    }
-    answered = false;
-    answer.value = "";
-  }
   })
-
-  submitBtn.addEventListener('click', () => {
-    if (answer.value.toLowerCase() == pickedQuestion[0]){
-      question.classList.remove('lightcoral');
-      question.classList.add('lightgreen');
-      result.classList.remove('lightcoral');
-      result.classList.add('lightgreen');
-      if (answered == false ) {
-        pointsValue++;
-        points.innerHTML = pointsValue;
-      }
-      answered = true;
-      
-    } else {
-      question.classList.remove('lightgreen');
-      question.classList.add('lightcoral');
-      result.classList.remove('lightgreen');
-      result.classList.add('lightcoral');
-      pointsValue--;
-      points.innerHTML = pointsValue;
-    }
-  })
-
-  giveUpBtn.addEventListener('click', () => {
-    
-    if (answered == false) {
-      answer.value = pickedQuestion[0];
-      pointsValue--;
-      points.innerHTML = pointsValue;
-    
-    }
-    answered = true;
-    
-  })
-
-
 }
 
 App();

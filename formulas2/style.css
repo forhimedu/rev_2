@@ -182,3 +182,8 @@ p{
       font-size: 2rem; /* Further increase font size for larger screens */
   }
 }
+
+.black {
+  color: black;
+  padding: 1rem;
+}
