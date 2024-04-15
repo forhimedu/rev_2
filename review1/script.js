@@ -173,7 +173,7 @@ function App() {
   })
 
   submitBtn.addEventListener('click', () => {
-    if (answer.value.toLowerCase() == pickedQuestion[0]){
+    if (answer.value.toLowerCase() == pickedQuestion[0].toLowerCase()){
       question.classList.remove('lightcoral');
       question.classList.add('lightgreen');
       result.classList.remove('lightcoral');
