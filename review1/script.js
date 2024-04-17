@@ -157,14 +157,14 @@ function App() {
     } 
     pickedQuestion = newArr[i];
     i++;
-    if  (pickedQuestion[1][0] == '.') {
+    if  (pickedQuestion[2][0] == '.') {
       const photo = document.createElement('img');
-      photo.setAttribute('src', `${pickedQuestion[1]}`);
+      photo.setAttribute('src', `${pickedQuestion[2]}`);
       question.appendChild(photo);
     }
     else {
     const questText = document.createElement('h4');
-    questText.innerHTML = pickedQuestion[1];
+    questText.innerHTML = pickedQuestion[2];
     question.appendChild(questText);
     }
     answered = false;
