@@ -70,7 +70,7 @@ function App() {
     i++;
     if  (pickedQuestion[0][0] == '.') {
       const photo = document.createElement('img');
-      photo.setAttribute('src', `${pickedQuestion[2]}`);
+      photo.setAttribute('src', `${pickedQuestion[1]}`);
       question.appendChild(photo);
     }
     else {
@@ -84,8 +84,8 @@ function App() {
   })
 
   submitBtn.addEventListener('click', () => {
-    console.log(inputValue.value, 'and', pickedQuestion[2]);
-    if (inputValue.value == pickedQuestion[2]){
+    console.log(inputValue.value, 'and', pickedQuestion[1]);
+    if (inputValue.value == pickedQuestion[1]){
       pointsContainer.classList.remove('red');
       pointsContainer.classList.add('green');
       if (answered == false ) {
@@ -103,7 +103,7 @@ function App() {
   })
 
   revealAnswerBtn.addEventListener('click', () => {
-    inputValue.value = pickedQuestion[2];
+    inputValue.value = pickedQuestion[1];
     if (answered == false) {
       pointsValue--;
       points.innerHTML = pointsValue;

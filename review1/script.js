@@ -111,6 +111,8 @@ const data = [
 
 ]
 
+
+
 function shuffleArray(array) {
   for (let i = array.length - 1; i > 0; i--) {
     const j = Math.floor(Math.random() * (i + 1));
@@ -157,14 +159,14 @@ function App() {
     } 
     pickedQuestion = newArr[i];
     i++;
-    if  (pickedQuestion[2][0] == '.') {
+    if  (pickedQuestion[1][0] == '.') {
       const photo = document.createElement('img');
-      photo.setAttribute('src', `${pickedQuestion[2]}`);
+      photo.setAttribute('src', `${pickedQuestion[1]}`);
       question.appendChild(photo);
     }
     else {
     const questText = document.createElement('h4');
-    questText.innerHTML = pickedQuestion[2];
+    questText.innerHTML = pickedQuestion[1];
     question.appendChild(questText);
     }
     answered = false;
