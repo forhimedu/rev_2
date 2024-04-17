@@ -106,7 +106,7 @@ function App() {
   data.forEach(elem => {
     const a = document.createElement('p');
     a.classList.add('black');
-    const text = `${i}. ${elem[1]} => [${elem[0]}]`
+    const text = `${i}. ${elem[0]} => [${elem[1]}]`
     a.innerHTML = text;
     container.appendChild(a);
     i++;
